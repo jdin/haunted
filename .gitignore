@@ -3,3 +3,5 @@ package-lock.json
 haunted.js
 index.js
 web.js
+.idea/
+dist/

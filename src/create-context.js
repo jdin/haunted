@@ -1,6 +1,6 @@
 import { contextEvent } from './symbols.js';
 import { useContext } from './use-context.js';
-import { component } from './component.js';
+import { component } from './lit-component.js';
 
 export const createContext = (defaultValue) => {
   const Context = {};
