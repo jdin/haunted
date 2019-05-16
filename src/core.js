@@ -1,6 +1,6 @@
 import { commitSymbol, phaseSymbol, updateSymbol, hookSymbol, effectsSymbol, contextSymbol } from './symbols.js';
 import { setCurrent, clear } from './interface.js';
-import { render, html } from 'lit-html';
+import { render, html } from './lit.js';
 
 const defer = Promise.resolve().then.bind(Promise.resolve());
 
