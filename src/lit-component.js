@@ -1,5 +1,5 @@
-// import {LitElement} from "lit-element";
-export {LitElement} from 'https://unpkg.com/lit-element@^2.1.0/lit-element.js';
+import {LitElement} from "lit-element";
+// import {LitElement} from 'https://unpkg.com/lit-element@^2.1.0/lit-element.js';
 import {effectsSymbol, hookSymbol} from "./symbols";
 import {clear, setCurrent} from "./interface";
 
@@ -43,7 +43,13 @@ class LitContainer {
     }
 }
 
-
+/**
+ * Works with components based on LitElement
+ * @param renderer the renderer function
+ * @param BaseElement - LitElement or its subclass
+ * @param options
+ * @returns {Element}
+ */
 export function component(renderer, BaseElement = LitElement, options = {useShadowDOM: true}) {
     class Element extends BaseElement {
         static get properties() {
@@ -67,6 +73,7 @@ export function component(renderer, BaseElement = LitElement, options = {useShad
             if (this._container[effectsSymbol]) {
                 this._container.runEffects(effectsSymbol);
             }
+            super.updated(_changedProperties);
         }
 
         disconnectedCallback() {
