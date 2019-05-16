@@ -1,4 +1,5 @@
 export { component } from './component.js';
+export { component as litComponent } from './lit-component.js';
 export { html, render } from './core.js';
 export { useCallback } from "./use-callback.js";
 export { useEffect } from './use-effect.js';

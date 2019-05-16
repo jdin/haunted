@@ -3,7 +3,7 @@ import { Container } from './core.js';
 function toCamelCase(val = '') {
   return val.indexOf('-') === -1 ? val.toLowerCase() : val.toLowerCase().split('-').reduce((out, part) => {
     return out ? out + part.charAt(0).toUpperCase() + part.slice(1) : part;
-  },'') 
+  },'')
 }
 
 function component(renderer, BaseElement = HTMLElement, options = {useShadowDOM: true}) {
@@ -18,7 +18,7 @@ function component(renderer, BaseElement = HTMLElement, options = {useShadowDOM:
         this._container = new Container(renderer, this);
       } else {
         this.attachShadow({ mode: 'open' });
-        this._container = new Container(renderer, this.shadowRoot, this);        
+        this._container = new Container(renderer, this.shadowRoot, this);
       }
     }
 
@@ -63,7 +63,7 @@ function component(renderer, BaseElement = HTMLElement, options = {useShadowDOM:
           configurable: true,
           writable: true,
           value
-        }; 
+        };
       } else {
         desc = reflectiveProp(value);
       }
